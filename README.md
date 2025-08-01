@@ -27,7 +27,7 @@ My versions are respectively: `v22.14.0` & `v10.9.2`
 ```bash
   npm install reactive-native-calendars (for the reactive native calendar component)
 ```
-Obs.: In order for the code to run properly into Expo Go, it is very IMPORTANT that the first command is done IF you clone this repository. Otherwhise, if you download the code and run it in a folder, you do not need to change and directory, just proceed to install al the components and modules.
+Obs.: In order for the code to run properly into Expo Go, it is very IMPORTANT that the first command is done IF you clone this repository. Otherwhise, if you download the code and run it in a folder, you do not need to change any directory, just proceed to install all the components and modules.
 
 # Tasks:
 The features for tasks are all done in an intuitive and simple way, in order to make it easier to handle your tasks and see what is going on. Some updates in the UI and UX might come soon, whenever I get some time to work on it.
