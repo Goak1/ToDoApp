@@ -1,47 +1,44 @@
-import {
-    View,           // Container component for layout
-    Text,           // Component for displaying text
-    TextInput,      // Input field for text
-    Button,         // Button component
-    Modal,          // Modal dialog component
-} from "react-native";
+import {View,Text, TextInput, Button, Modal} from "react-native";
 import styles from "../styles";
 import { Calendar } from "react-native-calendars";
 
 // Define the TaskModal functional component with props
 const TaskModal = ({
-    modalVisible,      // Boolean to control modal visibility
-    task,              // Task object containing title, description, deadline, etc.
-    setTask,           // Function to update the task state
-    handleAddTask,     // Function to handle adding or updating a task
+    modalVisible,      
+    task,              
+    setTask,           
+    handleAddTask,     
     handleCancel,      // Function to handle cancel action
-    validationError,   // Boolean to indicate validation error
+    validationError,  
 }) => {
     return (
+
         // Modal component to display the task form
         <Modal
-            visible={modalVisible}        // Show or hide modal based on modalVisible
-            animationType="slide"         // Slide animation for modal appearance
-            transparent={false}>          // Modal is not transparent
+            visible={modalVisible}       
+            animationType="slide"        
+            transparent={false}>          
 
-            {/* Container for modal content */}
+            {/* Container for modal*/}
+
             <View style={styles.modalContainer}>
-                {/* Input for task title */}
+
+                {/* task title */}
                 <TextInput
-                    style={styles.input}                  // Style for input
-                    placeholder="Title"                   // Placeholder text
-                    value={task.title}                    // Value from task object
-                    onChangeText={(text) =>               // Update task title on change
+                    style={styles.input}                  
+                    placeholder="Title"                   
+                    value={task.title}                    
+                    onChangeText={(text) =>              
                         setTask({ ...task, title: text })
                     }
                 />
 
                 {/* Input for task description */}
                 <TextInput
-                    style={styles.input}                  // Style for input
-                    placeholder="Description"             // Placeholder text
-                    value={task.description}              // Value from task object
-                    onChangeText={(text) =>               // Update task description on change
+                    style={styles.input}                 
+                    placeholder="Description"             
+                    value={task.description}             
+                    onChangeText={(text) =>              
                         setTask({
                             ...task,
                             description: text,
@@ -52,18 +49,36 @@ const TaskModal = ({
                 <Text style={styles.inputLabel}>
                     Deadline:
                 </Text>
+
+                {/* Priority Picker */}
+                <Text style={styles.inputLabel}>Priority:</Text>
+                
+                {/* Picker for the priority */}
+                <Picker
+                    selectedValue={task.priority}
+                    style={styles.picker}
+                    onValueChange={(value) =>
+                        setTask({ ...task, priority: value })
+                    }>
+                    <Picker.Item label="Low" value="Low" />
+                    <Picker.Item label="Medium" value="Medium" />
+                    <Picker.Item label="High" value="High" />
+                </Picker>
+
                 {/* Calendar component for selecting deadline */}
                 <Calendar
-                    style={styles.datePicker}             // Style for calendar
+                    style={styles.datePicker}             
                     markedDates={                         // Highlight selected date
                         task.deadline
                             ? { [task.deadline]: { selected: true, selectedColor: '#007BFF' } }
                             : {}
                     }
+
                     onDayPress={(day) =>                  // Update deadline on date selection
                         setTask({ ...task, deadline: day.dateString })
                     }
-                    current={task.deadline}               // Set current date in calendar
+
+                    current={task.deadline}               
                 />
 
                 {/* Show validation error if present */}
@@ -72,17 +87,18 @@ const TaskModal = ({
                         Please fill in all fields correctly.
                     </Text>
                 )}
+
                 {/* Button to add or update task */}
                 <Button
-                    title={task.id ? "Update" : "Add"}    // Show "Update" if editing, else "Add"
-                    onPress={handleAddTask}               // Call handleAddTask on press
-                    color="#007BFF" />                    // Button color
+                    title={task.id ? "Update" : "Add"}    
+                    onPress={handleAddTask}               
+                    color="#007BFF" />                   
 
                 {/* Button to cancel and close modal */}
                 <Button
-                    title="Cancel"                        // Button label
-                    onPress={handleCancel}                // Call handleCancel on press
-                    color="#FF3B30" />                    // Button color
+                    title="Cancel"                        
+                    onPress={handleCancel}              
+                    color="#FF3B30" />                    
             </View>
         </Modal>
     );

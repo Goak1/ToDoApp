@@ -1,18 +1,12 @@
-// Import necessary components from react-native
 import { View, Text, TouchableOpacity } from "react-native";
-// Import styles from the styles file
 import styles from "../styles";
 
-// Define the TaskItem functional component with props
-const TaskItem = ({
-    task, // The task object containing details
-    handleEditTask, // Function to handle editing a task
-    handleToggleCompletion, // Function to toggle task completion
-    handleDeleteTask, // Function to delete a task
-}) => {
+
+const TaskItem = ({task, handleEditTask, handleToggleCompletion, handleDeleteTask}) => {
     return (
         // Container for the entire task item
         <View style={styles.taskItem}>
+
             {/* Container for task text details */}
             <View style={styles.taskTextContainer}>
                 {/* Display the task title, with a different style if completed */}
@@ -32,6 +26,11 @@ const TaskItem = ({
                 <Text style={styles.taskStatus}>
                     Status: {task.status}
                 </Text>
+                {/* Display the priority status */}
+                <Text style={styles.taskPriority}>
+                    Priority: {task.priority}
+                </Text>
+
                 {/* Display the task deadline */}
                 <Text style={styles.taskDeadline}>
                     Deadline: {task.deadline}
@@ -41,6 +40,7 @@ const TaskItem = ({
                     Created: {task.createdAt}
                 </Text>
             </View>
+
             {/* Container for action buttons */}
             <View style={styles.buttonContainer}>
                 {/* Button to edit the task */}

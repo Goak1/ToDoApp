@@ -155,6 +155,25 @@ const styles = StyleSheet.create({
     taskCreatedAt: {
         color: "#5497FF", 
     },
+
+    taskPriority: {
+        fontSize: 16,
+        color: "#9C27B0", // purple
+    },
+
+    picker: {
+        height: 50,
+        width: "100%",
+        marginBottom: 15,
+    },
+    
+    filterSortContainer: {
+        marginBottom: 10,
+        backgroundColor: "#fff",
+        padding: 10,
+        borderRadius: 8,
+    },
+
 });
 
 export default styles;
