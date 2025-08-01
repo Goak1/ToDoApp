@@ -4,6 +4,9 @@
 import { useState } from "react";
 import {View,Text,TouchableOpacity} from "react-native";
 import {Picker} from "@react-native-picker/picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect } from "react";
+
 
 // Import custom components
 import TaskList from "./components/TaskList";
@@ -12,6 +15,35 @@ import styles from "./styles"; // Import shared styles
 
 // Define the main App component
 const App = () => {
+
+    // Load tasks from AsyncStorage when the app starts
+    useEffect(() => {
+        const loadTasks = async () => {
+            try {
+                const storedTasks = await AsyncStorage.getItem("@tasks");
+                if (storedTasks) {
+                    setTasks(JSON.parse(storedTasks));
+                }
+            } catch (error) {
+                console.error("Error loading tasks from storage:", error);
+            }
+        };
+        loadTasks();
+    }, []);
+
+    // Save tasks to AsyncStorage whenever tasks change
+    useEffect(() => {
+        const saveTasks = async () => {
+            try {
+                await AsyncStorage.setItem("@tasks", JSON.stringify(tasks));
+            } catch (error) {
+                console.error("Error saving tasks to storage:", error);
+            }
+        };
+        saveTasks();
+    }, [tasks]);
+
+
     // Task list state (array of all tasks)
     const [tasks, setTasks] = useState([]);
 
