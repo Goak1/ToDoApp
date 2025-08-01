@@ -15,22 +15,23 @@ My versions are respectively: `v22.14.0` & `v10.9.2`
 ```bash
   cd ToDoApp
 ```
+(Change directory)
 ```bash
   npm install
 ```
-(for node_modules folder)
+(For node_modules folder)
 ```bash
   npm install @react-native-picker/picker --save
 ```
- (for the picker feature at the main screen)
+(For the picker feature at the main screen)
 ```bash
   npx expo install @react-native-async-storage/async-storage
 ```
-(for the storage feature)
+(For the storage feature)
 ```bash
   npm install reactive-native-calendars
 ```
-(for the reactive native calendar component)
+(For the reactive native calendar component)
 
 Obs.: In order for the code to run properly into Expo Go, it is very IMPORTANT that the first command is done IF you clone this repository. Otherwhise, if you download the code and run it in a folder, you do not need to change any directory, just proceed to install all the components and modules.
 
