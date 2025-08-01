@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1, 
         padding: 30, 
-        backgroundColor: "#f7f7f7", 
+        backgroundColor: "#E1E4E8", 
     },
     // Title text style
     title: {
@@ -65,14 +65,15 @@ const styles = StyleSheet.create({
     // Container for buttons (edit, complete, delete)
     buttonContainer: {
         flexDirection: "column", 
-        marginVertical: 2, 
+        marginVertical: 10, 
     },
     // Edit button style
     editButton: {
-        backgroundColor: "#007BFF", 
+        backgroundColor: "#9FAAAB", 
         borderRadius: 5, 
         padding: 10, 
-        marginRight: 10, 
+        marginRight: 10,
+        marginBottom: 10,
         width: 110, 
     },
     // Generic button style
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#4CAF50", 
         borderRadius: 5, 
         padding: 10, 
+        marginBottom: 10,
         marginRight: 10, 
         width: 110, 
     },
@@ -98,9 +100,10 @@ const styles = StyleSheet.create({
     },
     // Delete button style
     deleteButton: {
-        backgroundColor: "#FF9500", 
+        backgroundColor: "#EB2828", 
         borderRadius: 5, 
         padding: 10, // Padding inside the button
+        marginBottom: 10,
         width: 110, 
     },
     // Add button style (for adding new tasks)
@@ -162,16 +165,16 @@ const styles = StyleSheet.create({
     },
 
     picker: {
-        height: 50,
+        height: 60,
         width: "100%",
         marginBottom: 15,
     },
-    
+
     filterSortContainer: {
         marginBottom: 10,
-        backgroundColor: "#fff",
+        backgroundColor: "#ffff",
         padding: 10,
-        borderRadius: 8,
+        borderRadius: 16,
     },
 
 });

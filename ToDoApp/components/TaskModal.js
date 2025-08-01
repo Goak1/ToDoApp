@@ -1,16 +1,10 @@
 import {View,Text, TextInput, Button, Modal} from "react-native";
 import styles from "../styles";
 import { Calendar } from "react-native-calendars";
+import {Picker} from "@react-native-picker/picker";
 
 // Define the TaskModal functional component with props
-const TaskModal = ({
-    modalVisible,      
-    task,              
-    setTask,           
-    handleAddTask,     
-    handleCancel,      // Function to handle cancel action
-    validationError,  
-}) => {
+const TaskModal = ({modalVisible, task, setTask, handleAddTask, handleCancel, validationError}) => {
     return (
 
         // Modal component to display the task form
@@ -52,7 +46,7 @@ const TaskModal = ({
 
                 {/* Priority Picker */}
                 <Text style={styles.inputLabel}>Priority:</Text>
-                
+
                 {/* Picker for the priority */}
                 <Picker
                     selectedValue={task.priority}

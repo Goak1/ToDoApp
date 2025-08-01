@@ -26,11 +26,17 @@ const TaskItem = ({task, handleEditTask, handleToggleCompletion, handleDeleteTas
                 <Text style={styles.taskStatus}>
                     Status: {task.status}
                 </Text>
-                {/* Display the priority status */}
-                <Text style={styles.taskPriority}>
+                {/* Display the priority status, also will change the colour based on the priority choosen*/}
+                <Text
+                    style={[
+                        styles.taskPriority,
+                        task.priority === "High" && { color: "red" },
+                        task.priority === "Medium" && { color: "orange" },
+                        task.priority === "Low" && { color: "green" },
+                    ]}
+                >
                     Priority: {task.priority}
                 </Text>
-
                 {/* Display the task deadline */}
                 <Text style={styles.taskDeadline}>
                     Deadline: {task.deadline}

@@ -2,7 +2,8 @@
 
 // Import necessary modules and components
 import { useState } from "react";
-import {View,Text,TouchableOpacity,Picker} from "react-native";
+import {View,Text,TouchableOpacity} from "react-native";
+import {Picker} from "@react-native-picker/picker";
 
 // Import custom components
 import TaskList from "./components/TaskList";
@@ -150,6 +151,7 @@ const App = () => {
 
             {/* Filter and Sort Section */}
             <View style={styles.filterSortContainer}>
+                
                 {/* Filter Picker */}
                 <Picker
                     selectedValue={filter}
