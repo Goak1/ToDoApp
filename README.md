@@ -17,7 +17,7 @@ My versions are respectively: `v22.14.0` & `v10.9.2`
 ```
 ↳ Change directory
 ```bash
-  npm install
+  npm install expo
 ```
 ↳ For node_modules folder
 ```bash
