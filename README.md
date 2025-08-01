@@ -13,10 +13,18 @@ Check your node and npm version with:
 My versions are respectively: `v22.14.0` & `v10.9.2`
 - Please, open your local terminal on VSCode and write the following:
 ```bash
-  cd ToDoApp 
+  cd ToDoApp
+```
+```bash
   npm install (for node_modules folder)
+```
+```bash
   npm install @react-native-picker/picker --save (for the picker feature at the main screen)
+```
+```bash
   npx expo install @react-native-async-storage/async-storage (for the storage feature)
+```
+```bash
   npm install reactive-native-calendars (for the reactive native calendar component)
 ```
 Obs.: In order for the code to run properly into Expo Go, it is very IMPORTANT that the first command is done IF you clone this repository. Otherwhise, if you download the code and run it in a folder, you do not need to change and directory, just proceed to install al the components and modules.
